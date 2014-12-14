@@ -1,0 +1,25 @@
+package "mei-team_cuda-sak"
+version "1.0"
+purpose "Definir as opções do cuda-sak"
+description "Ficheiro de configuração do gengetopt"
+
+# Definição do grupo de opções
+section "grupo principal"
+defgroup "grupo principal" groupdesc="definição do grupo principal" required
+groupoption "device" d "opção -d / -device" group="grupo principal" optional
+groupoption "handleerror" e "Generates the CUDA error processing code" group="grupo principal" optional
+groupoption "callkernel" k "Generates the code that calls kernel. Requires the name of the kernel as paremeter" group="grupo principal" typestr="name" string
+groupoption "genmaps" m "Generates the mapping for n-D geometries to 1-D kernel. n should be given and should be between 1 and 3" group="grupo principal" typestr="dimension to map" values="1","2","3" int #see enum
+groupoption "occupancy" o "Generates the skeleton code that uses the CUDA 6.5 occupancy API" group="grupo principal"
+groupoption "preprocessor" p "Generates the wrappes for preprocessor. Requires architecture as parameter, which must be a number greater than 1 and a multiple of 10." group="grupo principal" typestr="arch version" int
+groupoption "reduction" r "Generates the skeleton kernel code regarding the traditional log2 N reduction algorithm." group="grupo principal"
+groupoption "skeleton" s "Generates the source code if a CUDA kernel skeleton" group="grupo principal" typestr="name of the kernel" string
+groupoption "timing" t "Generates the source code used for timing the execution of a CUDA kernel." group="grupo principal"
+groupoption "unified" u "Generates the skeleton code that uses CUDA 6.5 unified memory API." group="grupo principal"
+groupoption "about" - "Displays the credits of the application." group="grupo principal"
+groupoption "testall" a "Activates all the options that generate code." group="grupo principal"
+
+# Opção independente
+option "filename" f "Needs filename and writes output to that file" typestr="filename" string optional
+option "students" - "Used along with other option (to define the output). Needs name of the file and line to write in." typestr="all options between \"" string optional
+

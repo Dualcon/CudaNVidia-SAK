@@ -1,0 +1,286 @@
+\hypertarget{functions_8c}{\section{functions.\-c File Reference}
+\label{functions_8c}\index{functions.\-c@{functions.\-c}}
+}
+
+
+Functions of cuda-\/sak.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}functions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{functions_8c_a84abe8008306b2769321f4ee1649d56b}{device} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_a6a719d880a38e6eeff46973d69eb962b}{handle\-Error} ()
+\item 
+void \hyperlink{functions_8c_afe162ca7220c61fdaa73e19062942497}{filename} (const char $\ast$text, char $\ast$fname)
+\item 
+char $\ast$ \hyperlink{functions_8c_afcf34ed4841b9b46a1db9e101550ae2a}{call\-Kernel} (char $\ast$name)
+\item 
+char $\ast$ \hyperlink{functions_8c_a93676ec3696f79e587cd14c5d0941feb}{gen\-Maps} (int dimension)
+\item 
+char $\ast$ \hyperlink{functions_8c_a51b3d7eebbde96e9140d62e458b42311}{occupancy} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_a89f788b8668eca68962d143f45d72341}{preprocessor} (int architecture)
+\item 
+char $\ast$ \hyperlink{functions_8c_abc340bd768d0cd2700a9ec837b641588}{reduction} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_ac99eaef532ffb033a3bd013c11d1a37d}{skeleton} (char $\ast$kernel\-\_\-name)
+\item 
+char $\ast$ \hyperlink{functions_8c_acb74d2994a4849a75ed7dc4148f56d0c}{timing} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_aa4569d76166213b77b36327a201d98c8}{unified} ()
+\item 
+void \hyperlink{functions_8c_a9f5ac01521c6ba12f92058964eedf17a}{students} (const char $\ast$fname, char $\ast$string\-To\-Write, int line\-To\-Write)
+\item 
+char $\ast$ \hyperlink{functions_8c_a70481d3ca72b9fce56653b397be46578}{about} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_a79ff99d729fb8dec5ec584743b9b6013}{test\-All} ()
+\item 
+char $\ast$ \hyperlink{functions_8c_ae59cbf82430069f2ad13bf419e7b2474}{build\-String} (char $\ast$$\ast$array, int length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions of cuda-\/sak. Functions' implementation of cuda-\/sak.
+
+Functions\-: device, handle\-Error, filename, callkernel, gen\-Maps, occupancy, preprocessor, reduction, skeleton, timing, unified, students, about, testall, build\-String \begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{functions_8c_a70481d3ca72b9fce56653b397be46578}{\index{functions.\-c@{functions.\-c}!about@{about}}
+\index{about@{about}!functions.c@{functions.\-c}}
+\subsubsection[{about}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ about (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a70481d3ca72b9fce56653b397be46578}
+This function will be used when the user chooses option --about \char`\"{}about\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with the credits of the application 
+\end{DoxyReturn}
+\hypertarget{functions_8c_ae59cbf82430069f2ad13bf419e7b2474}{\index{functions.\-c@{functions.\-c}!build\-String@{build\-String}}
+\index{build\-String@{build\-String}!functions.c@{functions.\-c}}
+\subsubsection[{build\-String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ build\-String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{array, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_ae59cbf82430069f2ad13bf419e7b2474}
+This function will be used (auxiliary) to join multiple strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The array of strings to join \\
+\hline
+{\em length} & Length of the strings' array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of joining all the strings in one (with \char`\"{}\textbackslash{}n\char`\"{} in between) 
+\end{DoxyReturn}
+\hypertarget{functions_8c_afcf34ed4841b9b46a1db9e101550ae2a}{\index{functions.\-c@{functions.\-c}!call\-Kernel@{call\-Kernel}}
+\index{call\-Kernel@{call\-Kernel}!functions.c@{functions.\-c}}
+\subsubsection[{call\-Kernel}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ call\-Kernel (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_afcf34ed4841b9b46a1db9e101550ae2a}
+This function will be used when the user chooses option -\/k \char`\"{}callkernel\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the kernel to be called \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single string with code for calling the kernel 
+\end{DoxyReturn}
+\hypertarget{functions_8c_a84abe8008306b2769321f4ee1649d56b}{\index{functions.\-c@{functions.\-c}!device@{device}}
+\index{device@{device}!functions.c@{functions.\-c}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ device (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a84abe8008306b2769321f4ee1649d56b}
+This function will be used when the user chooses option -\/d \char`\"{}device\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with code for getting device properties 
+\end{DoxyReturn}
+\hypertarget{functions_8c_afe162ca7220c61fdaa73e19062942497}{\index{functions.\-c@{functions.\-c}!filename@{filename}}
+\index{filename@{filename}!functions.c@{functions.\-c}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}void filename (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{text, }
+\item[{char $\ast$}]{fname}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_afe162ca7220c61fdaa73e19062942497}
+This function will be used when the user chooses option -\/f \char`\"{}filename\char`\"{}. This function writes the output of the chosen function to the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text to be written to the file \\
+\hline
+{\em fname} & Name of the file to be written to \\
+\hline
+\end{DoxyParams}
+\hypertarget{functions_8c_a93676ec3696f79e587cd14c5d0941feb}{\index{functions.\-c@{functions.\-c}!gen\-Maps@{gen\-Maps}}
+\index{gen\-Maps@{gen\-Maps}!functions.c@{functions.\-c}}
+\subsubsection[{gen\-Maps}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ gen\-Maps (
+\begin{DoxyParamCaption}
+\item[{int}]{dimension}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a93676ec3696f79e587cd14c5d0941feb}
+This function will be used when the user chooses option -\/m \char`\"{}genmaps\char`\"{}. Generates the mapping for n-\/\-D geometries to 1-\/\-D kernel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimension} & Dimension (1\-D-\/3\-D) to be mapped to 1-\/\-D \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single string with code for mapping geometries to 1-\/\-D kernel 
+\end{DoxyReturn}
+\hypertarget{functions_8c_a6a719d880a38e6eeff46973d69eb962b}{\index{functions.\-c@{functions.\-c}!handle\-Error@{handle\-Error}}
+\index{handle\-Error@{handle\-Error}!functions.c@{functions.\-c}}
+\subsubsection[{handle\-Error}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ handle\-Error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a6a719d880a38e6eeff46973d69eb962b}
+This function will be used when the user chooses option -\/e \char`\"{}handleerror\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with code for handling errors in C\-U\-D\-A 
+\end{DoxyReturn}
+\hypertarget{functions_8c_a51b3d7eebbde96e9140d62e458b42311}{\index{functions.\-c@{functions.\-c}!occupancy@{occupancy}}
+\index{occupancy@{occupancy}!functions.c@{functions.\-c}}
+\subsubsection[{occupancy}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ occupancy (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a51b3d7eebbde96e9140d62e458b42311}
+This function will be used when the user chooses option -\/o \char`\"{}occupancy\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with code that uses the C\-U\-D\-A 6.\-5 occupancy A\-P\-I 
+\end{DoxyReturn}
+\hypertarget{functions_8c_a89f788b8668eca68962d143f45d72341}{\index{functions.\-c@{functions.\-c}!preprocessor@{preprocessor}}
+\index{preprocessor@{preprocessor}!functions.c@{functions.\-c}}
+\subsubsection[{preprocessor}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ preprocessor (
+\begin{DoxyParamCaption}
+\item[{int}]{architecture}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a89f788b8668eca68962d143f45d72341}
+This function will be used when the user chooses option -\/p \char`\"{}preprocessor\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em architecture} & Desired architecture of the preprocessor code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single string with code for preprocessor 
+\end{DoxyReturn}
+\hypertarget{functions_8c_abc340bd768d0cd2700a9ec837b641588}{\index{functions.\-c@{functions.\-c}!reduction@{reduction}}
+\index{reduction@{reduction}!functions.c@{functions.\-c}}
+\subsubsection[{reduction}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ reduction (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_abc340bd768d0cd2700a9ec837b641588}
+This function will be used when the user chooses option -\/r \char`\"{}reduction\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with code for the traditional log 2 N reduction algorithm 
+\end{DoxyReturn}
+\hypertarget{functions_8c_ac99eaef532ffb033a3bd013c11d1a37d}{\index{functions.\-c@{functions.\-c}!skeleton@{skeleton}}
+\index{skeleton@{skeleton}!functions.c@{functions.\-c}}
+\subsubsection[{skeleton}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ skeleton (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{kernel\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_ac99eaef532ffb033a3bd013c11d1a37d}
+This function will be used when the user chooses option -\/s \char`\"{}skeleton\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\-\_\-name} & Name of the kernel to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single string with general code and hints for a C\-U\-D\-A program 
+\end{DoxyReturn}
+\hypertarget{functions_8c_a9f5ac01521c6ba12f92058964eedf17a}{\index{functions.\-c@{functions.\-c}!students@{students}}
+\index{students@{students}!functions.c@{functions.\-c}}
+\subsubsection[{students}]{\setlength{\rightskip}{0pt plus 5cm}void students (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{char $\ast$}]{string\-To\-Write, }
+\item[{int}]{line\-To\-Write}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a9f5ac01521c6ba12f92058964eedf17a}
+This function will be used when the user chooses option --students \char`\"{}students\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Name of the file to be injected with code \\
+\hline
+{\em string\-To\-Write} & Code to be injected to the file \\
+\hline
+{\em line\-To\-Write} & Line of the original file in which the code will be injected \\
+\hline
+\end{DoxyParams}
+\hypertarget{functions_8c_a79ff99d729fb8dec5ec584743b9b6013}{\index{functions.\-c@{functions.\-c}!test\-All@{test\-All}}
+\index{test\-All@{test\-All}!functions.c@{functions.\-c}}
+\subsubsection[{test\-All}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ test\-All (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_a79ff99d729fb8dec5ec584743b9b6013}
+This function will be used when the user chooses option -\/a \char`\"{}testall\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string containing all the output from the other cuda-\/sak functions 
+\end{DoxyReturn}
+\hypertarget{functions_8c_acb74d2994a4849a75ed7dc4148f56d0c}{\index{functions.\-c@{functions.\-c}!timing@{timing}}
+\index{timing@{timing}!functions.c@{functions.\-c}}
+\subsubsection[{timing}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ timing (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_acb74d2994a4849a75ed7dc4148f56d0c}
+This function will be used when the user chooses option -\/t \char`\"{}timing\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with general code used for timing the execution of a C\-U\-D\-A kernel 
+\end{DoxyReturn}
+\hypertarget{functions_8c_aa4569d76166213b77b36327a201d98c8}{\index{functions.\-c@{functions.\-c}!unified@{unified}}
+\index{unified@{unified}!functions.c@{functions.\-c}}
+\subsubsection[{unified}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ unified (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{functions_8c_aa4569d76166213b77b36327a201d98c8}
+This function will be used when the user chooses option -\/u \char`\"{}unified\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A single string with general code that uses the C\-U\-D\-A 6.\-5 unified memory unified A\-P\-I 
+\end{DoxyReturn}
